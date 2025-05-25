@@ -1,3 +1,3 @@
 <?php
 
-echo 'Versão 2 do teste';
+echo 'Versão 3 do teste';
