@@ -1,0 +1,33 @@
+name: Deploy no Servidor de Produção
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy Prod
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v3
+
+    - name: Configurar chave SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.PROD_SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.PROD_SERVER_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Executar deploy via SSH
+      run: |
+        ssh ${{ secrets.PROD_SERVER_USER }}@${{ secrets.PROD_SERVER_HOST }} << 'EOF'
+          cd /home/deploy/app-production
+          git pull origin main
+          docker build -t app:latest .
+          docker stop app-production || true
+          docker rm app-production || true
+          docker run -d --name app-production -p 80:80 app:latest
+        EOF
