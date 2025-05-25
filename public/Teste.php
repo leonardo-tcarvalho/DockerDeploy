@@ -13,6 +13,9 @@
             padding: 0;
             background-color: #f5f5f5;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .container {
@@ -47,7 +50,36 @@
             color: white;
             text-align: center;
             padding: 1rem 0;
-            margin-top: 30px;
+            margin-top: auto;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+        }
+
+        .title {
+            color: #2c3e50;
+            margin: 0 0 15px;
         }
     </style>
 </head>
@@ -59,7 +91,6 @@
             <p>Deploy no Servidor de Teste</p>
         </div>
     </header>
-
 
     <footer>
         <div class="container">
