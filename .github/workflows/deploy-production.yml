@@ -24,7 +24,7 @@ jobs:
     - name: Executar deploy via SSH
       run: |
         ssh ${{ secrets.PROD_SERVER_USER }}@${{ secrets.PROD_SERVER_HOST }} << 'EOF'
-          cd /home/deploy/app
+          cd /home/deploy/DockerDeploy
           git pull origin main
           docker build -t app:latest .
           docker stop app-production || true
