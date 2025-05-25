@@ -101,7 +101,7 @@
                 </svg>
             </div>
             <h2 class="title">Servidor Ativo</h2>
-            <p>O ambiente Docker está funcionando corretamente no servidor de <span style="color: red; font: size 30px;">TESTE</span>.</p>
+            <p>O ambiente Docker está funcionando corretamente no servidor de <span style="color: green; font: size 50px;">TESTE</span>.</p>
         </div>
     </main>
 
