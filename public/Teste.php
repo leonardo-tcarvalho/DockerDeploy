@@ -93,7 +93,16 @@
     </header>
 
     <main>
-
+        <div class="card">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="22" height="18" rx="2" ry="2"></rect>
+                    <line x1="10" y1="3" x2="10" y2="21"></line>
+                </svg>
+            </div>
+            <h2 class="title">Servidor Ativo</h2>
+            <p>O ambiente Docker está funcionando corretamente no servidor de teste.</p>
+        </div>
     </main>
 
     <footer>
