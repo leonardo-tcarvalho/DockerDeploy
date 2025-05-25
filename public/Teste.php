@@ -1,3 +1,3 @@
 <?php
 
-echo 'Versão 3 do teste';
+echo 'Versão 3 do teste da staging';
