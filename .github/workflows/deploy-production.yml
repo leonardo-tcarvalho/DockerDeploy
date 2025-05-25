@@ -25,9 +25,9 @@ jobs:
       run: |
         ssh ${{ secrets.PROD_SERVER_USER }}@${{ secrets.PROD_SERVER_HOST }} << 'EOF'
           cd /home/deploy/DockerDeploy
-          git pull origin main
-          docker build -t app:latest .
-          docker stop app-production || true
-          docker rm app-production || true
-          docker run -d --name app-production -p 80:80 app:latest
+          sudo git pull origin main
+          sudo docker build -t app:latest .
+          sudo docker stop app-production || true
+          sudo docker rm app-production || true
+          sudo docker run -d --name app-production -p 80:80 app:latest
         EOF
