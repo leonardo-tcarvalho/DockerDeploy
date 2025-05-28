@@ -14,13 +14,6 @@ jobs:
     - name: Checkout do código
       uses: actions/checkout@v3
 
-    - name: Configurar chave SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.TEST_SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H ${{ secrets.TEST_SERVER_HOST }} >> ~/.ssh/known_hosts
-
     - name: Executar deploy via SSH
       run: |
         ssh ${{ secrets.TEST_SERVER_USER }}@${{ secrets.TEST_SERVER_HOST }} << 'EOF'
